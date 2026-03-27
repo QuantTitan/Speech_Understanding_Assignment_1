@@ -1,0 +1,42 @@
+# Paper method: Disentangler with AAM-Softmax on spk subspace
+mode: disentangler
+
+# Data
+data_root:    ./data
+train_split:  train-clean-100
+noise_dir:    null
+
+# Audio
+sr:           16000
+n_mels:       80
+seg_sec:      3.0
+
+# Model
+emb_dim:      256
+spk_ratio:    0.5              # spk_dim = 128, env_dim = 128
+
+# Environment discriminator
+num_env_classes: 2             # binary: same-env=0, diff-env=1
+
+# AAM-Softmax
+aam_margin:   0.2
+aam_scale:    30
+
+# GRL
+grl_alpha:    1.0
+
+# Loss weights
+w_recons:     1.0
+w_spk:        1.0
+w_env_env:    0.5
+w_env_spk:    0.5
+w_corr:       0.1
+
+# Training
+epochs:       50
+batch_size:   32               # triplets → smaller batch
+lr:           0.0005
+weight_decay: 0.0001
+num_workers:  4
+save_every:   10
+save_dir:     exps/

@@ -1,0 +1,42 @@
+# Proposed improvement: replace AAM-Softmax with InfoNCE contrastive loss
+mode: improved
+
+# Data
+data_root:    ./data
+train_split:  train-clean-100
+noise_dir:    null
+
+# Audio
+sr:           16000
+n_mels:       80
+seg_sec:      3.0
+
+# Model
+emb_dim:      256
+spk_ratio:    0.5
+
+# Environment discriminator
+num_env_classes: 2
+
+# InfoNCE temperature
+infonce_temp: 0.07
+
+# GRL
+grl_alpha:    1.0
+
+# Loss weights (no aam, add infonce)
+w_recons:     1.0
+w_spk:        1.0              # w_spk now weights the InfoNCE term
+w_env_env:    0.5
+w_env_spk:    0.5
+w_corr:       0.1
+w_infonce:    1.0
+
+# Training
+epochs:       50
+batch_size:   32
+lr:           0.0005
+weight_decay: 0.0001
+num_workers:  4
+save_every:   10
+save_dir:     exps/
