@@ -1,0 +1,37 @@
+# data/manifest.csv
+# ─────────────────────────────────────────────────────────────────────────────
+# This manifest lists the audio files used in Question 1.
+# All files are publicly available; no redistribution is included in the repo.
+#
+# Columns:
+#   id           – short identifier used in the code
+#   source       – dataset name / origin
+#   file         – path relative to data/ (download separately)
+#   url          – public download / streaming URL
+#   duration_s   – approximate duration in seconds
+#   sample_rate  – native sample rate (Hz)
+#   description  – what the file is used for
+# ─────────────────────────────────────────────────────────────────────────────
+
+id,source,file,url,duration_s,sample_rate,description
+demo_synth,synthesised,data/synth_voiced_unvoiced.wav,N/A (generated at runtime),3.0,16000,Synthesised voiced+unvoiced+silence signal for MFCC and boundary detection demos
+librispeech_001,LibriSpeech test-clean,data/librispeech_84-121550-0000.flac,https://www.openslr.org/12 (test-clean.tar.gz),5.2,16000,Real speech utterance for MFCC extraction and phoneme alignment (speaker 84)
+librispeech_002,LibriSpeech test-clean,data/librispeech_84-121550-0001.flac,https://www.openslr.org/12 (test-clean.tar.gz),4.8,16000,Second utterance for windowing / leakage comparison
+common_voice_001,Mozilla Common Voice v15 (en),data/cv_en_sample_001.mp3,https://commonvoice.mozilla.org/en/datasets,3.5,48000,Third-party English sentence used for voiced/unvoiced detection validation
+esc50_noise,ESC-50,data/esc50_rain.wav,https://github.com/karolpiczak/ESC-50,5.0,44100,Environmental noise clip used as an unvoiced/noise reference in SNR analysis
+
+# ─── Download instructions ────────────────────────────────────────────────────
+# LibriSpeech
+#   wget https://www.openslr.org/resources/12/test-clean.tar.gz
+#   tar -xzf test-clean.tar.gz
+#   # Copy or symlink the .flac files into data/
+#
+# Common Voice (requires free registration)
+#   https://commonvoice.mozilla.org/en/datasets  → download "English" corpus
+#
+# ESC-50
+#   git clone https://github.com/karolpiczak/ESC-50
+#   # The WAV files are in ESC-50/audio/
+#
+# Synthesised audio is generated automatically by running any of the scripts
+# without --audio argument; the generated file is saved to outputs/synth.wav.
