@@ -1,0 +1,41 @@
+# ──────────────────────────────────────────────────────────
+#  Q3 — Ethical Auditing & Privacy-Preserving Audio AI
+#  Requirements
+# ──────────────────────────────────────────────────────────
+
+# Core ML
+torch>=2.1.0
+torchaudio>=2.1.0
+torchvision>=0.16.0       # for some utility functions
+
+# HuggingFace ecosystem
+transformers>=4.38.0
+datasets>=2.18.0
+huggingface-hub>=0.21.0
+accelerate>=0.27.0
+
+# Audio processing
+soundfile>=0.12.1
+librosa>=0.10.1
+scipy>=1.12.0
+audioread>=3.0.1
+
+# Data / ML utilities
+numpy>=1.24.0
+pandas>=2.1.0
+scikit-learn>=1.4.0
+
+# Plotting / reporting
+matplotlib>=3.8.0
+seaborn>=0.13.0
+reportlab>=4.1.0          # for generating PDFs
+
+# Evaluation
+onnxruntime>=1.17.0       # optional: for official DNSMOS ONNX model
+
+# Optional: ASR verification in pp_demo.py
+# openai-whisper>=20231117  # uncomment to enable ASR verification
+
+# Dev / testing
+tqdm>=4.66.0
+pytest>=8.0.0
