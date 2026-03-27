@@ -1,0 +1,20 @@
+# ─── Core scientific stack ─────────────────────────────────────────────────
+numpy>=1.24.0
+scipy>=1.11.0
+matplotlib>=3.7.0
+
+# ─── Deep learning ──────────────────────────────────────────────────────────
+torch>=2.1.0
+torchaudio>=2.1.0            # optional: used only if torchaudio FA pipeline available
+
+# ─── Hugging Face ───────────────────────────────────────────────────────────
+transformers>=4.35.0
+datasets>=2.14.0
+huggingface_hub>=0.19.0
+
+# ─── Audio I/O ──────────────────────────────────────────────────────────────
+soundfile>=0.12.1            # backend for datasets audio loading
+librosa>=0.10.1              # ONLY used for loading/resampling, NOT for MFCC
+
+# ─── Utilities ──────────────────────────────────────────────────────────────
+tqdm>=4.66.0
