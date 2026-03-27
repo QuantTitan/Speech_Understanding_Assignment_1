@@ -1,0 +1,28 @@
+# Baseline: TDNN encoder + AAM-Softmax only
+mode: baseline
+
+# Data
+data_root:    ./data
+train_split:  train-clean-100
+noise_dir:    null              # set to MUSAN path if available
+
+# Audio
+sr:           16000
+n_mels:       80
+seg_sec:      3.0
+
+# Model
+emb_dim:      256
+
+# AAM-Softmax
+aam_margin:   0.2
+aam_scale:    30
+
+# Training
+epochs:       50
+batch_size:   64
+lr:           0.001
+weight_decay: 0.0001
+num_workers:  4
+save_every:   10
+save_dir:     exps/
